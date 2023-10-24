@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
 *{
@@ -6,8 +6,10 @@ export const GlobalStyles = createGlobalStyle`
   padding: 0;
 }
 body{
-  background: rgb(2,0,36);
-  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+  ${({ theme }) => css`
+      background: ${theme.colors.mainBg};
+      background: ${theme.colors.mainSBg};
+  `}
   height: 100vh;
 }
 `;
